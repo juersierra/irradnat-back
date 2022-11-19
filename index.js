@@ -9,9 +9,9 @@ const CatalogControllers= require('./controllers/catalogcontrollers');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors())
-// app.use(cors({
-//     origin: 'http://localhost:3000'
-// }));
+app.use(cors({
+    origin: 'https://irradnat-front.000webhostapp.com'
+}));
 
 app.get('/', async (req, res) => {
     const catalog = await CatalogControllers.findAll()
